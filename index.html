@@ -5,9 +5,169 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="">
   <meta name="author" content="Giuseppe Mete">
+  <link rel="stylesheet" href="/css/style.css">
   <title>CSS GRID</title>
 </head>
 <body>
+  <header>
+    <img src="/images/logo.png" alt="scarpe.com logo">
+  </header>
+  <nav>
+    <button id="menubutton" onclick="openmenu()">
+      menu
+    </button>
+    <ul id="navbar" class="navbar">
+      <li><a href="javascript:gotoboots()">Boots</a></li>
+      <li><a href="javascript:gotosandals()">Sandals</a></li>
+      <li><a href="javascript:gotosneakers()">Sneakers</a></li>
+    </ul>
+  </nav>
+  <div class="product_grid" id="boots">
+    <h2>Boots</h2>  
+      <a href="#" class="product">
+        <img src="/images/boots/boot-1.jpg" alt="boot-1">
+        <h3>Boot-1</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/boots/boot-2.jpg" alt="boot-1">
+        <h3>Boot-1</h3>
+        <h3>40.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/boots/boot-3.jpg" alt="boot-2">
+        <h3>Boot-2</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/boots/boot-4.jpg" alt="boot-3">
+        <h3>Boot-3</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/boots/boot-5.jpg" alt="boot-4">
+        <h3>Boot-4</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/boots/boot-6.jpg" alt="boot-5">
+        <h3>Boot-5</h3>
+        <h3>50.00€</h3>
+      </a>
+    </div>
+
+  <div class="product_grid hidden" id="sandals">
+    <h2>Sandals</h2>  
+      <a href="#" class="product">
+        <img src="/images/sandals/sandal-1.jpg" alt="sandal-1">
+        <h3>Sandal-1</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/sandals/sandal-2.jpg" alt="sandal-2">
+        <h3>Sandal-1</h3>
+        <h3>40.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/sandals/sandal-3.jpg" alt="sandal-3">
+        <h3>Sandal-3</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/sandals/sandal-4.jpg" alt="sandal-4">
+        <h3>Sandal-4</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/sandals/sandal-5.jpg" alt="sandal-5">
+        <h3>Sandal-5</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/sandals/sandal-6.jpg" alt="sandal-6">
+        <h3>Sandal-6</h3>
+        <h3>50.00€</h3>
+      </a>
+    </div>
+
+  <div class="product_grid hidden" id="sneakers">
+    <h2>Sneakers</h2>  
+      <a href="#" class="product">
+        <img src="/images/sneakers/adidas-originals-superstar-80s-g61068-white-dark-royal.jpg" alt="adidas superstar white">
+        <h3>Adidas Superstar White</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/sneakers/adidas-originals-superstar-rt-eqt-blue.jpg" alt="adidas superstar blue">
+        <h3>Adidas Superstar Blue</h3>
+        <h3>40.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/sneakers/nike-air-force-1-07-488298-626-gym-red-sail.jpg" alt="nike air force red">
+        <h3>nike air force red</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/sneakers/nike-air-force-1-07-820266-002-black-sail-wolf-grey.jpg" alt="nike air force black">
+        <h3>nike air force black</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/sneakers/nike-roshe-one-retro-819881-371-lucid-green-vivid-sulfur.jpg" alt="nike roshe one">
+        <h3>nike roshe one</h3>
+        <h3>50.00€</h3>
+      </a>
+      <a href="#" class="product">
+        <img src="/images/sneakers/puma-ignite-interwoven-361133-01-white.jpg" alt="puma ignite">
+        <h3>puma ignite</h3>
+        <h3>50.00€</h3>
+      </a>
+    </div>
+
+    <script>
+      const boots =document.querySelector("#boots");
+      const sandals =document.querySelector("#sandals");
+      const sneakers =document.querySelector("#sneakers");
+      const navbar =document.querySelector("#navbar");
+
+      function gotoboots(){
+      if (!sandals.classList.contains("hidden")){
+      sandals.classList.add("hidden");
+      }
+      if (!sneakers.classList.contains("hidden")){
+      sneakers.classList.add("hidden");
+      }
+      boots.classList.remove("hidden");
+      navbar.classList.remove("show");
+      }
+
+      function gotosandals(){
+      if (!boots.classList.contains("hidden")){
+      boots.classList.add("hidden");
+      }
+      if (!sneakers.classList.contains("hidden")){
+      sneakers.classList.add("hidden");
+      }
+      sandals.classList.remove("hidden");
+      navbar.classList.remove("show");
+      }
+
+      function gotosneakers(){
+      if (!sandals.classList.contains("hidden")){
+      sandals.classList.add("hidden");
+      }
+      if (!boots.classList.contains("hidden")){
+      boots.classList.add("hidden");
+      }
+      sneakers.classList.remove("hidden");
+      navbar.classList.remove("show");
+      }
+
+      function openmenu(){
+        navbar.classList.toggle("show");
+      }
+      
+    </script>
 
 </body>
 </html>
